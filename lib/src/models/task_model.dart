@@ -9,7 +9,7 @@ class TaskModel {
     this.id,
     this.title,
     this.description,
-    this.status,
+    this.status = 0,
   });
 
   int id;

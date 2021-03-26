@@ -25,7 +25,7 @@ class TaskBloc {
     _taskContoller.sink.add(await DBProvider.instance.getTaskList());
   }
 
-  void insert(TaskModel task) async {
+  void insertTask(TaskModel task) async {
     await DBProvider.instance.insertTask(task);
     getTaskList();
   }
