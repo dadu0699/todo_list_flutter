@@ -14,15 +14,15 @@ class TaskBloc {
     getTaskList();
   }
 
-  final _taskContoller = new BehaviorSubject<List<TaskModel>>();
-  Stream<List<TaskModel>> get taskStream => _taskContoller.stream;
+  final _taskController = new BehaviorSubject<List<TaskModel>>();
+  Stream<List<TaskModel>> get taskStream => _taskController.stream;
 
   dispose() {
-    _taskContoller?.close();
+    _taskController?.close();
   }
 
   void getTaskList() async {
-    _taskContoller.sink.add(await DBProvider.instance.getTaskList());
+    _taskController.sink.add(await DBProvider.instance.getTaskList());
   }
 
   void insertTask(TaskModel task) async {

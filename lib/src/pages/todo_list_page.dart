@@ -55,7 +55,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
       padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: <Widget>[
           Text(
             'My Tasks',
             style: TextStyle(
@@ -78,7 +78,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
     );
   }
 
-  Widget _task(task) {
+  Widget _task(TaskModel task) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 25.0),
       child: Column(
@@ -95,13 +95,13 @@ class _ToDoListPageState extends State<ToDoListPage> {
             ),
             subtitle: Text(
               '${task.description}',
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 15,
                 decoration: task.status == 0
                     ? TextDecoration.none
                     : TextDecoration.lineThrough,
               ),
-              overflow: TextOverflow.ellipsis,
             ),
             trailing: Checkbox(
               activeColor: Theme.of(context).primaryColor,

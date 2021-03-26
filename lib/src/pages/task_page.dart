@@ -12,7 +12,6 @@ class TaskPage extends StatefulWidget {
 
 class _TaskPageState extends State<TaskPage> {
   final _formKey = GlobalKey<FormState>();
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   TaskBloc _taskBloc;
   TaskModel _task = new TaskModel();
@@ -69,7 +68,7 @@ class _TaskPageState extends State<TaskPage> {
           'Task',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 40,
+            fontSize: 40.0,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -94,13 +93,7 @@ class _TaskPageState extends State<TaskPage> {
     return TextFormField(
       textCapitalization: TextCapitalization.sentences,
       initialValue: _task.title,
-      decoration: InputDecoration(
-        labelText: 'Title',
-        labelStyle: TextStyle(fontSize: 18),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-      ),
+      decoration: _inputDecoration('Title'),
       onSaved: (value) => _task.title = value,
       validator: (value) {
         if (value.length < 0) return 'You need to enter a title';
@@ -116,14 +109,18 @@ class _TaskPageState extends State<TaskPage> {
       maxLines: 3,
       minLines: 3,
       keyboardType: TextInputType.multiline,
-      decoration: InputDecoration(
-        labelText: 'Description',
-        labelStyle: TextStyle(fontSize: 18),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-      ),
+      decoration: _inputDecoration('Description'),
       onSaved: (value) => _task.description = value,
+    );
+  }
+
+  InputDecoration _inputDecoration(String title) {
+    return InputDecoration(
+      labelText: title,
+      labelStyle: TextStyle(fontSize: 18),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
     );
   }
 
