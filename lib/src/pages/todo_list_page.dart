@@ -87,7 +87,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
             title: Text(
               task.title,
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 18.0,
                 decoration: task.status == 0
                     ? TextDecoration.none
                     : TextDecoration.lineThrough,
@@ -97,7 +97,7 @@ class _ToDoListPageState extends State<ToDoListPage> {
               '${task.description}',
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                fontSize: 15,
+                fontSize: 15.0,
                 decoration: task.status == 0
                     ? TextDecoration.none
                     : TextDecoration.lineThrough,

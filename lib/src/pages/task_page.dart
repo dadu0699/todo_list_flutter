@@ -117,7 +117,7 @@ class _TaskPageState extends State<TaskPage> {
   InputDecoration _inputDecoration(String title) {
     return InputDecoration(
       labelText: title,
-      labelStyle: TextStyle(fontSize: 18),
+      labelStyle: TextStyle(fontSize: 18.0),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
