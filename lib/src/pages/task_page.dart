@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:todo_list/src/blocs/provider_bloc.dart';
 import 'package:todo_list/src/blocs/task_bloc.dart';
 import 'package:todo_list/src/models/task_model.dart';
